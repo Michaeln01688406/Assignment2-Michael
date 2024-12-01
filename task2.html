@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 2</title>
+    </head>
+    <body>
+        <button type= "button" id="ClickMe">Click Me!</button>
+        <p id = displayBox></p>
+        <script>
+            function randomColor(){
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+            }
+            document.getElementById("ClickMe").addEventListener("click", function() {
+                alert("Button clicked!");
+                this.style.backgroundColor = randomColor();
+            })     
+        </script>
+    </body>
+</html>

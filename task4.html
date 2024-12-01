@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Assignment 2 - task 3</title>
+    </head>
+    <body>
+        <ul id = "list1">
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+
+        <script>
+            function randomString(length){
+                var letters = "abcdefghijklmnopqrstuvwxyz";
+                var result = '';
+                var charactersLength = letters.length;
+                for (let i = 0; i < length; i++){
+                    result += letters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                return result;
+            }
+
+            document.addEventListener("DOMContentLoaded", function(){
+                var list = document.getElementById("list1");
+                var newLi = document.createElement("li");
+                newLi.textContent = "Forth element";
+                list.appendChild(newLi);
+
+                list.addEventListener("click", function(event){
+                    if(event.target.nodeName == "LI"){
+                        event.target.textContent = randomString(10);
+                    }
+                })
+            }
+        )
+        </script>
+    </body>
+</html>
